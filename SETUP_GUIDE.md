@@ -129,11 +129,39 @@ Add the following keys to your Info.plist:
 ### Step 5: Enable Required Capabilities
 
 In Xcode:
-1. Select project → Targets → Signing & Capabilities
-2. Add capabilities:
-   - **Push Notifications** (for reminders)
-   - **Background Modes** (optional, for background sync)
-   - **HealthKit** (optional, for health data)
+1. Select your **DailyPlanner** project in the left sidebar
+2. Select the **Targets** → **DailyPlanner**
+3. Go to the **Signing & Capabilities** tab
+
+**Add these capabilities:**
+
+#### Push Notifications (REQUIRED)
+- Click **+ Capability** button (top left)
+- Search for **"Push Notifications"** or **"Remote Notifications"**
+- Click it to add
+- ✅ Make sure the checkbox is **enabled**
+
+**Note:** If you don't see "Push Notifications", try:
+- It might be labeled "Remote Notifications" 
+- Or check under "Background Modes" → enable "Remote notifications"
+
+#### Background Modes (Optional)
+- Click **+ Capability**
+- Search for **"Background Modes"**
+- A list of checkboxes will appear
+- ✅ Enable these:
+  - ✓ Background fetch (optional, for periodic syncing)
+  - ✓ Remote notifications (enables push notifications to work in background)
+
+#### HealthKit (Optional)
+- Click **+ Capability**
+- Search for **"HealthKit"**
+- ✅ Enable the checkbox if you want health data integration
+
+**Summary:**
+- **Push Notifications**: Required ✅ (must enable)
+- **Background Modes**: Optional (enable for better notification handling)
+- **HealthKit**: Optional (only if using health tracking)
 
 ### Step 6: Build and Run
 

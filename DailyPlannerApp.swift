@@ -2,7 +2,7 @@ import SwiftUI
 
 @main
 struct DailyPlannerApp: App {
-    @StateObject private var dataManager = CoreDataManager.shared
+    let dataManager = CoreDataManager.shared
     
     var body: some Scene {
         WindowGroup {

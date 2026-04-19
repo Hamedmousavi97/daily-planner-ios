@@ -141,7 +141,7 @@ struct HabitCard: View {
             .background(
                 RoundedRectangle(cornerRadius: 16)
                     .fill(Color.white.opacity(0.05))
-                    .backdrop(.thin)
+                    
             )
             
             // Child habits if exists

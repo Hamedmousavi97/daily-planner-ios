@@ -113,7 +113,7 @@ struct TodoCard: View {
                     .foregroundColor(.white)
                     .strikethrough(todo.isCompleted, color: .gray)
                 
-                if let description = todo.description {
+                if let description = todo.todoDescription {
                     Text(description)
                         .font(.caption)
                         .foregroundColor(.gray)
@@ -130,7 +130,7 @@ struct TodoCard: View {
                         .foregroundColor(priorityColor(todo.priority))
                     
                     if let dueDate = todo.dueDate {
-                        Label(dueDate, style: .date)
+                        Label(dueDate.formatted(date: .abbreviated, time: .omitted), systemImage: "calendar")
                             .font(.caption2)
                             .foregroundColor(.orange)
                     }
@@ -154,7 +154,7 @@ struct TodoCard: View {
         .background(
             RoundedRectangle(cornerRadius: 16)
                 .fill(Color.white.opacity(0.05))
-                .backdrop(.thin)
+                
         )
         .alert("Delete Todo", isPresented: $showDeleteAlert) {
             Button("Delete", role: .destructive) {
@@ -286,9 +286,11 @@ struct FilterTab: View {
                 .fontWeight(.semibold)
                 .padding(.horizontal, 12)
                 .padding(.vertical, 6)
-                .background(isSelected ? 
-                    LinearGradient(gradient: Gradient(colors: [.blue, .purple]), startPoint: .leading, endPoint: .trailing)
-                    : Color.white.opacity(0.1))
+                .background(
+                    isSelected ? 
+                        AnyShapeStyle(LinearGradient(gradient: Gradient(colors: [.blue, .purple]), startPoint: .leading, endPoint: .trailing)) as AnyShapeStyle
+                        : AnyShapeStyle(Color.white.opacity(0.1))
+                )
                 .foregroundColor(.white)
                 .cornerRadius(8)
         }

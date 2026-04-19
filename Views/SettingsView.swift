@@ -39,7 +39,6 @@ struct SettingsView: View {
                         .background(
                             RoundedRectangle(cornerRadius: 16)
                                 .fill(Color.white.opacity(0.05))
-                                .backdrop(.thin)
                         )
                         .padding()
                         
@@ -100,7 +99,7 @@ struct SettingsView: View {
                         .background(
                             RoundedRectangle(cornerRadius: 16)
                                 .fill(Color.white.opacity(0.05))
-                                .backdrop(.thin)
+                                
                         )
                         .padding()
                         
@@ -131,7 +130,7 @@ struct SettingsView: View {
                         .background(
                             RoundedRectangle(cornerRadius: 16)
                                 .fill(Color.white.opacity(0.05))
-                                .backdrop(.thin)
+                                
                         )
                         .padding()
                         
@@ -154,7 +153,7 @@ struct SettingsView: View {
                         .background(
                             RoundedRectangle(cornerRadius: 16)
                                 .fill(Color.white.opacity(0.05))
-                                .backdrop(.thin)
+                                
                         )
                         .padding()
                         
@@ -172,7 +171,7 @@ struct SettingsView: View {
                         .background(
                             RoundedRectangle(cornerRadius: 16)
                                 .fill(Color.white.opacity(0.05))
-                                .backdrop(.thin)
+                                
                         )
                         .padding()
                         
@@ -220,7 +219,7 @@ struct SettingsView: View {
                         .background(
                             RoundedRectangle(cornerRadius: 16)
                                 .fill(Color.white.opacity(0.05))
-                                .backdrop(.thin)
+                                
                         )
                         .padding()
                         
@@ -276,8 +275,8 @@ struct SettingRow: View {
 }
 
 extension View {
-    func backdrop(_ thickness: Material.Thickness) -> some View {
-        self.background(Material.ultraThin)
+    func backdrop(_ material: Material) -> some View {
+        self.background(material)
     }
 }
 

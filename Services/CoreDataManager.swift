@@ -1,12 +1,15 @@
 import Foundation
 import CoreData
+import Combine
 
-class CoreDataManager: ObservableObject {
+class CoreDataManager: NSObject, ObservableObject {
     static let shared = CoreDataManager()
+    
+    @Published var objectWillChange = ObservableObjectPublisher()
     
     let container: NSPersistentContainer
     
-    init() {
+    override init() {
         container = NSPersistentContainer(name: "DailyPlanner")
         container.loadPersistentStores { description, error in
             if let error = error as NSError? {
@@ -14,6 +17,7 @@ class CoreDataManager: ObservableObject {
             }
         }
         container.viewContext.automaticallyMergesChangesFromTheOther = true
+        super.init()
     }
     
     // MARK: - Habit Operations
@@ -94,7 +98,7 @@ class CoreDataManager: ObservableObject {
         let newTodo = NSTodo(context: container.viewContext)
         newTodo.id = UUID()
         newTodo.title = title
-        newTodo.description = description
+        newTodo.todoDescription = description
         newTodo.dueDate = dueDate
         newTodo.priority = priority
         newTodo.category = category

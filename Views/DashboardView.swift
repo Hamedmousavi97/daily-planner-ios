@@ -81,7 +81,7 @@ struct DashboardView: View {
                             .background(
                                 RoundedRectangle(cornerRadius: 20)
                                     .fill(Color.white.opacity(0.05))
-                                    .backdrop(.thin)
+                                    
                             )
                         }
                         .padding(.horizontal)
@@ -98,7 +98,7 @@ struct DashboardView: View {
                         .background(
                             RoundedRectangle(cornerRadius: 20)
                                 .fill(Color.purple.opacity(0.2))
-                                .backdrop(.thin)
+                                
                         )
                         .padding(.horizontal)
                         
@@ -136,7 +136,7 @@ struct DashboardView: View {
                         .background(
                             RoundedRectangle(cornerRadius: 20)
                                 .fill(Color.white.opacity(0.05))
-                                .backdrop(.thin)
+                                
                         )
                         .padding(.horizontal)
                         
@@ -183,7 +183,7 @@ struct DashboardView: View {
                         .background(
                             RoundedRectangle(cornerRadius: 20)
                                 .fill(Color.white.opacity(0.05))
-                                .backdrop(.thin)
+                                
                         )
                         .padding(.horizontal)
                         
@@ -226,7 +226,7 @@ struct StatisticCard: View {
         .background(
             RoundedRectangle(cornerRadius: 16)
                 .fill(Color.white.opacity(0.05))
-                .backdrop(.thin)
+                
         )
     }
 }

@@ -2,7 +2,6 @@ import Foundation
 import CoreData
 
 // MARK: - Habit Model
-@NSManaged
 class NSHabit: NSManagedObject {
     @NSManaged var id: UUID
     @NSManaged var name: String
@@ -23,11 +22,10 @@ class NSHabit: NSManagedObject {
 }
 
 // MARK: - Todo Model
-@NSManaged
 class NSTodo: NSManagedObject {
     @NSManaged var id: UUID
     @NSManaged var title: String
-    @NSManaged var description: String?
+    @NSManaged var todoDescription: String?
     @NSManaged var isCompleted: Bool
     @NSManaged var createdDate: Date
     @NSManaged var dueDate: Date?
@@ -38,7 +36,6 @@ class NSTodo: NSManagedObject {
 }
 
 // MARK: - Daily Score Model
-@NSManaged
 class NSDailyScore: NSManagedObject {
     @NSManaged var id: UUID
     @NSManaged var date: Date
@@ -52,7 +49,6 @@ class NSDailyScore: NSManagedObject {
 }
 
 // MARK: - App Usage Log
-@NSManaged
 class NSAppUsageLog: NSManagedObject {
     @NSManaged var id: UUID
     @NSManaged var date: Date
@@ -62,7 +58,6 @@ class NSAppUsageLog: NSManagedObject {
 }
 
 // MARK: - Health Integration
-@NSManaged
 class NSHealthEntry: NSManagedObject {
     @NSManaged var id: UUID
     @NSManaged var date: Date

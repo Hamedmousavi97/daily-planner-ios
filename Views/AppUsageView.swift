@@ -52,7 +52,6 @@ struct AppUsageView: View {
                             .background(
                                 RoundedRectangle(cornerRadius: 20)
                                     .fill(Color.white.opacity(0.05))
-                                    .backdrop(.thin)
                             )
                             
                             // Usage Goal
@@ -90,7 +89,6 @@ struct AppUsageView: View {
                             .background(
                                 RoundedRectangle(cornerRadius: 16)
                                     .fill(Color.white.opacity(0.05))
-                                    .backdrop(.thin)
                             )
                             
                             // Score Impact
@@ -151,7 +149,7 @@ struct AppUsageView: View {
                         .background(
                             RoundedRectangle(cornerRadius: 16)
                                 .fill(Color.white.opacity(0.05))
-                                .backdrop(.thin)
+                                
                         )
                         .padding()
                         
@@ -203,7 +201,7 @@ struct AppUsageView: View {
                         .background(
                             RoundedRectangle(cornerRadius: 16)
                                 .fill(Color.white.opacity(0.05))
-                                .backdrop(.thin)
+                                
                         )
                         .padding()
                         
