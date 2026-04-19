@@ -1,0 +1,83 @@
+# Xcode build files
+*.o
+*.xcconfig
+*.xcworkspace
+!DailyPlanner.xcworkspace
+build/
+DerivedData/
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+*.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+
+# Xcode cache files
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dsym
+
+# Xcode user-specific files
+xcuserdata/
+*.xcuserstate
+*.xcuserdatad
+
+# Swift Package Manager
+.build/
+.swiftpm/
+*.xcframework
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Carthage
+Carthage/Build
+
+# Build artifacts
+build/
+.DS_Store
+profile
+*.moved-aside
+DerivedData
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Mac OS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Debugging
+*.log
+
+# Environment variables
+.env
+.env.local
+
+# Python
+__pycache__/
+*.pyc
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
+
+# Swift
+.build
+.swiftpm
+
+# Project specific
+.DS_Store
+dist/
