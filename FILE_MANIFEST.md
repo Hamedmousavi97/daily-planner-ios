@@ -11,12 +11,14 @@ This directory contains a **complete, production-ready iOS app** for daily and w
 ## 📚 Documentation Files (7 files)
 
 ### 1. **README.md** (Main Project Overview)
+
 - Project description and features
 - Tech stack overview
 - Project structure
 - How to run and use TestFlight
 
 ### 2. **QUICK_START.md** (Fast Setup Guide)
+
 - 5-minute setup
 - First-time usage
 - Testing different features
@@ -24,6 +26,7 @@ This directory contains a **complete, production-ready iOS app** for daily and w
 - Customization ideas
 
 ### 3. **SETUP_GUIDE.md** (Detailed Setup)
+
 - Complete Xcode project creation
 - Core Data model setup
 - File structure
@@ -32,6 +35,7 @@ This directory contains a **complete, production-ready iOS app** for daily and w
 - Troubleshooting guide
 
 ### 4. **TESTFLIGHT_GUIDE.md** (Beta Testing)
+
 - What is TestFlight
 - Step-by-step setup
 - Inviting testers (internal/external/public)
@@ -41,6 +45,7 @@ This directory contains a **complete, production-ready iOS app** for daily and w
 - App Store submission
 
 ### 5. **FEATURES.md** (Complete Feature Documentation)
+
 - Architecture overview (MVVM)
 - Feature breakdown (10 features)
 - Data model details
@@ -52,6 +57,7 @@ This directory contains a **complete, production-ready iOS app** for daily and w
 - Enhancement ideas
 
 ### 6. **PROJECT_SUMMARY.md** (Project Overview)
+
 - Complete project summary
 - Deliverables checklist
 - Architecture deep-dive
@@ -64,6 +70,7 @@ This directory contains a **complete, production-ready iOS app** for daily and w
 - Deployment path
 
 ### 7. **UI_SCREENS.md** (Visual Screen Guide)
+
 - ASCII mockups of all screens
 - Navigation flow diagram
 - Color reference
@@ -78,6 +85,7 @@ This directory contains a **complete, production-ready iOS app** for daily and w
 ### App Entry Point (1 file)
 
 #### **DailyPlannerApp.swift**
+
 - Main app entry point
 - Window setup
 - Core Data container initialization
@@ -88,6 +96,7 @@ This directory contains a **complete, production-ready iOS app** for daily and w
 ### Models (1 file)
 
 #### **Models/CoreDataModels.swift**
+
 - NSHabit entity (habits with streaks)
 - NSTodo entity (task management)
 - NSDailyScore entity (daily metrics)
@@ -101,6 +110,7 @@ All entities defined with Core Data attributes.
 ### Services (2 files)
 
 #### **Services/CoreDataManager.swift**
+
 - Singleton Core Data stack manager
 - Habit CRUD operations
 - Todo CRUD operations
@@ -110,6 +120,7 @@ All entities defined with Core Data attributes.
 - Automatic save functionality
 
 Key Methods:
+
 ```
 - createHabit()
 - fetchHabits()
@@ -123,6 +134,7 @@ Key Methods:
 ```
 
 #### **Services/NotificationService.swift**
+
 - Local notification scheduling
 - Habit reminders (daily)
 - Todo reminders (scheduled)
@@ -131,6 +143,7 @@ Key Methods:
 - Permission request handling
 
 Key Methods:
+
 ```
 - requestNotificationPermission()
 - scheduleHabitReminder()
@@ -145,11 +158,13 @@ Key Methods:
 ### ViewModels (3 files)
 
 #### **ViewModels/HabitViewModel.swift**
+
 - NSObject + ObservableObject for KVO
 - NSFetchedResultsController for data binding
 - Published properties for reactive UI
 
 Key Functionality:
+
 - Fetch and display habits
 - Create new habits with reminders
 - Toggle habit completion
@@ -159,6 +174,7 @@ Key Functionality:
 - Separate good/bad habits
 
 Published Properties:
+
 ```
 - habits: [NSHabit]
 - selectedHabit: NSHabit?
@@ -170,10 +186,12 @@ Published Properties:
 ```
 
 #### **ViewModels/TodoViewModel.swift**
+
 - NSObject + ObservableObject
 - NSFetchedResultsController for todos
 
 Key Functionality:
+
 - Fetch todos sorted by due date
 - Create new todos
 - Toggle todo completion
@@ -184,6 +202,7 @@ Key Functionality:
 - Get today/week todos
 
 Published Properties:
+
 ```
 - todos: [NSTodo]
 - newTodoTitle: String
@@ -194,11 +213,13 @@ Published Properties:
 ```
 
 #### **ViewModels/DashboardViewModel.swift**
+
 - Dashboard metrics calculation
 - Score generation logic
 - Motivation message generation
 
 Key Functionality:
+
 - Calculate daily metrics
 - Fetch weather data (mock)
 - Fetch news data (mock)
@@ -207,6 +228,7 @@ Key Functionality:
 - Calculate performance level
 
 Published Properties:
+
 ```
 - dailyScore: Double
 - weatherData: String
@@ -222,12 +244,14 @@ Published Properties:
 ### Views (6 files)
 
 #### **Views/MainTabView.swift**
+
 - TabView with 5 tabs
 - Tab bar navigation
 - Initialization of all ViewModels
 - Environment setup for Core Data
 
 Tabs:
+
 1. Dashboard
 2. Habits
 3. Todos
@@ -235,6 +259,7 @@ Tabs:
 5. Settings
 
 #### **Views/DashboardView.swift**
+
 - Daily score visualization
 - Circular progress indicator
 - Motivation quote display
@@ -244,10 +269,12 @@ Tabs:
 - Refresh functionality
 
 Components:
+
 - DashboardView (main)
 - StatisticCard (reusable)
 
 #### **Views/HabitsView.swift**
+
 - Habit list display
 - Good/Bad habit tabs
 - Habit cards with streaks
@@ -256,6 +283,7 @@ Components:
 - New habit creation sheet
 
 Components:
+
 - HabitsView (main)
 - HabitsList (list container)
 - HabitCard (individual item)
@@ -263,6 +291,7 @@ Components:
 - TabOption (tab selector)
 
 #### **Views/TodosView.swift**
+
 - Todo list with filters
 - Priority and category display
 - Tag-based filtering
@@ -271,6 +300,7 @@ Components:
 - Delete functionality
 
 Components:
+
 - TodosView (main)
 - TodosList (list container)
 - TodoCard (individual item)
@@ -278,6 +308,7 @@ Components:
 - FilterTab (filter selector)
 
 #### **Views/AppUsageView.swift**
+
 - Daily usage gauge
 - Daily goal progress bar
 - Impact on score display
@@ -286,11 +317,13 @@ Components:
 - Log usage sheet
 
 Components:
+
 - AppUsageView (main)
 - RecommendationItem (advice card)
 - LogUsageSheet (logging modal)
 
 #### **Views/SettingsView.swift**
+
 - Notification controls
 - Briefing time picker
 - News category selection
@@ -300,6 +333,7 @@ Components:
 - Data backup/export
 
 Components:
+
 - SettingsView (main)
 - SectionHeader (section title)
 - SettingRow (settings item)
@@ -349,6 +383,7 @@ Daily Planner/
 ## 🔄 How Files Work Together
 
 ### Data Flow
+
 ```
 Views (Display) ← → ViewModels (Logic) → Services (Operations) → Models (Data)
 
@@ -361,6 +396,7 @@ Example:
 ```
 
 ### File Dependencies
+
 ```
 DailyPlannerApp.swift
     │
@@ -418,27 +454,33 @@ Frameworks Used:
 ## 🎯 Getting Started with Files
 
 ### Step 1: Read Documentation
+
 Start with: **QUICK_START.md** (5 min)
 Then: **SETUP_GUIDE.md** (15 min)
 
 ### Step 2: Understand Architecture
+
 Read: **FEATURES.md** (Architecture section)
 View: **UI_SCREENS.md** (Visual understanding)
 
 ### Step 3: Set Up Project
+
 Follow: **SETUP_GUIDE.md** (Step-by-step)
 Copy all .swift files into Xcode project
 
 ### Step 4: Configure
+
 Add Info.plist entries (see SETUP_GUIDE)
 Create Core Data model
 Enable required capabilities
 
 ### Step 5: Run
+
 Press Cmd+R in Xcode
 Test on simulator or device
 
 ### Step 6: Deploy
+
 When ready: **TESTFLIGHT_GUIDE.md**
 
 ---
@@ -447,33 +489,33 @@ When ready: **TESTFLIGHT_GUIDE.md**
 
 ### Core Files (Must Have)
 
-| File | Size | Purpose | Required |
-|------|------|---------|----------|
-| DailyPlannerApp.swift | ~20 lines | App entry point | ✅ Yes |
-| CoreDataModels.swift | ~150 lines | Data entities | ✅ Yes |
-| CoreDataManager.swift | ~200 lines | Database ops | ✅ Yes |
-| NotificationService.swift | ~100 lines | Reminders | ✅ Yes |
-| HabitViewModel.swift | ~120 lines | Habit logic | ✅ Yes |
-| TodoViewModel.swift | ~100 lines | Todo logic | ✅ Yes |
-| DashboardViewModel.swift | ~80 lines | Dashboard logic | ✅ Yes |
-| MainTabView.swift | ~50 lines | Navigation | ✅ Yes |
-| DashboardView.swift | ~250 lines | Home screen | ✅ Yes |
-| HabitsView.swift | ~350 lines | Habit UI | ✅ Yes |
-| TodosView.swift | ~280 lines | Todo UI | ✅ Yes |
-| AppUsageView.swift | ~250 lines | Usage UI | ✅ Yes |
-| SettingsView.swift | ~300 lines | Settings UI | ✅ Yes |
+| File                      | Size       | Purpose         | Required |
+| ------------------------- | ---------- | --------------- | -------- |
+| DailyPlannerApp.swift     | ~20 lines  | App entry point | ✅ Yes   |
+| CoreDataModels.swift      | ~150 lines | Data entities   | ✅ Yes   |
+| CoreDataManager.swift     | ~200 lines | Database ops    | ✅ Yes   |
+| NotificationService.swift | ~100 lines | Reminders       | ✅ Yes   |
+| HabitViewModel.swift      | ~120 lines | Habit logic     | ✅ Yes   |
+| TodoViewModel.swift       | ~100 lines | Todo logic      | ✅ Yes   |
+| DashboardViewModel.swift  | ~80 lines  | Dashboard logic | ✅ Yes   |
+| MainTabView.swift         | ~50 lines  | Navigation      | ✅ Yes   |
+| DashboardView.swift       | ~250 lines | Home screen     | ✅ Yes   |
+| HabitsView.swift          | ~350 lines | Habit UI        | ✅ Yes   |
+| TodosView.swift           | ~280 lines | Todo UI         | ✅ Yes   |
+| AppUsageView.swift        | ~250 lines | Usage UI        | ✅ Yes   |
+| SettingsView.swift        | ~300 lines | Settings UI     | ✅ Yes   |
 
 ### Documentation Files (Reference)
 
-| File | Purpose | Read Time |
-|------|---------|-----------|
-| README.md | Project overview | 5 min |
-| QUICK_START.md | Quick setup | 10 min |
-| SETUP_GUIDE.md | Detailed setup | 30 min |
-| TESTFLIGHT_GUIDE.md | Beta testing | 20 min |
-| FEATURES.md | Feature details | 30 min |
-| PROJECT_SUMMARY.md | Complete summary | 25 min |
-| UI_SCREENS.md | Visual guide | 10 min |
+| File                | Purpose          | Read Time |
+| ------------------- | ---------------- | --------- |
+| README.md           | Project overview | 5 min     |
+| QUICK_START.md      | Quick setup      | 10 min    |
+| SETUP_GUIDE.md      | Detailed setup   | 30 min    |
+| TESTFLIGHT_GUIDE.md | Beta testing     | 20 min    |
+| FEATURES.md         | Feature details  | 30 min    |
+| PROJECT_SUMMARY.md  | Complete summary | 25 min    |
+| UI_SCREENS.md       | Visual guide     | 10 min    |
 
 ---
 
@@ -482,6 +524,7 @@ When ready: **TESTFLIGHT_GUIDE.md**
 Before starting, verify you have:
 
 ### Documentation
+
 - [ ] README.md
 - [ ] QUICK_START.md
 - [ ] SETUP_GUIDE.md
@@ -492,6 +535,7 @@ Before starting, verify you have:
 - [ ] FILE_MANIFEST.md (this file)
 
 ### Swift Source Code
+
 - [ ] DailyPlannerApp.swift
 - [ ] CoreDataModels.swift
 - [ ] CoreDataManager.swift
@@ -527,34 +571,40 @@ Before starting, verify you have:
 ### Quick Lookup by Feature
 
 **Habit Tracking:**
+
 - HabitViewModel.swift
 - Models/CoreDataModels.swift (NSHabit)
 - Views/HabitsView.swift
 - Services/CoreDataManager.swift
 
 **Todo Management:**
+
 - TodoViewModel.swift
 - Models/CoreDataModels.swift (NSTodo)
 - Views/TodosView.swift
 - Services/CoreDataManager.swift
 
 **Daily Scoring:**
+
 - DashboardViewModel.swift
 - Models/CoreDataModels.swift (NSDailyScore)
 - Views/DashboardView.swift
 - Services/CoreDataManager.swift
 
 **Notifications:**
+
 - Services/NotificationService.swift
 - HabitViewModel.swift
 - TodoViewModel.swift
 
 **Phone Usage:**
+
 - Models/CoreDataModels.swift (NSAppUsageLog)
 - Views/AppUsageView.swift
 - Services/CoreDataManager.swift
 
 **Settings:**
+
 - Views/SettingsView.swift
 - Services/NotificationService.swift
 
@@ -563,6 +613,7 @@ Before starting, verify you have:
 ## 🎓 Learning Path
 
 ### For Beginners
+
 1. Start with QUICK_START.md
 2. Read UI_SCREENS.md to understand UI
 3. Follow SETUP_GUIDE.md step-by-step
@@ -571,6 +622,7 @@ Before starting, verify you have:
 6. Finally, understand Services and Models
 
 ### For Experienced Developers
+
 1. Skim FEATURES.md for overview
 2. Jump to specific files of interest
 3. Review CoreDataManager and NotificationService

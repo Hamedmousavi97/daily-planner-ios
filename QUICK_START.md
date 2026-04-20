@@ -9,44 +9,62 @@
 
 ### Quick Steps
 
-**Step 1: Clone/Copy Files** (30 seconds)
+**Step 1: Clone the Repository** (30 seconds)
 ```bash
-# All files are already in this directory
-cd "/Users/hamed/Desktop/Daily Planner"
-ls -la
+git clone https://github.com/Hamedmousavi97/daily-planner-ios.git
+cd daily-planner-ios
 ```
 
 **Step 2: Open in Xcode** (1 minute)
 ```bash
-# Option A: Create new project and copy files
+# The project is ready to open
+1. Open Xcode
+2. File → Open → Select DailyPlanner.xcodeproj
+3. Click Open
+```
+
+**Step 3: Build and Run** (1 minute)
+```bash
+# In Xcode:
+1. Select iPhone simulator (iOS 16+)
+2. Press Cmd + R to build and run
+3. Grant notification permissions when prompted
+```
+
+**Step 4: Start Using the App** (3 minutes)
+```
+The app includes:
+✅ Habit tracking with streaks
+✅ Todo management with priorities
+✅ Daily scoring system
+✅ Phone usage monitoring
+✅ Dark mode with liquid glass design
+✅ Local notifications
+```
+
+## Alternative: Manual Setup
+
+If you prefer manual setup or don't want to use GitHub:
+
+**Step 1: Create Xcode Project** (1 minute)
+```bash
 1. Open Xcode
 2. File → New → Project → App
 3. Name: DailyPlanner, Language: Swift, Interface: SwiftUI
 4. Click Create
-5. Copy all .swift files into the project
-
-# Option B: Export as Xcode Project
-# This folder structure can be packaged as an Xcode project
 ```
 
-**Step 3: Create Core Data Model** (2 minutes)
-```
-In Xcode:
-1. File → New → File → Data Model
-2. Name it: DailyPlanner.xcdatamodeld
-3. Skip adding entities (or add manually if desired)
-```
-
-**Step 4: Configure Info.plist** (1 minute)
-```
-Right-click Info.plist → Open As → Source Code
-Add these lines before closing </dict>:
-
-<key>NSCalendarsUsageDescription</key>
-<string>Daily Planner needs access to your calendar</string>
-
-<key>UIUserInterfaceStyle</key>
-<string>Dark</string>
+**Step 2: Copy Files** (2 minutes)
+```bash
+# Copy all files from this directory to your Xcode project:
+- DailyPlannerApp.swift
+- Models/CoreDataModels.swift
+- Services/CoreDataManager.swift
+- Services/NotificationService.swift
+- ViewModels/*.swift
+- Views/*.swift
+- Assets.xcassets
+- DailyPlanner.xcdatamodeld
 ```
 
 **Step 5: Run** (30 seconds)

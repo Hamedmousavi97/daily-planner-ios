@@ -9,6 +9,7 @@ TestFlight is Apple's beta testing platform that allows you to distribute your i
 ### Prerequisites
 
 Before using TestFlight, ensure you have:
+
 - Apple Developer Account ($99/year)
 - Xcode installed on your Mac
 - DailyPlanner app fully built and ready
@@ -25,7 +26,6 @@ Before using TestFlight, ensure you have:
 
 1. Go to **Product** → **Archive**
    - Make sure you've selected a device target (not simulator)
-   
 2. Wait for the build to complete
 
 3. The Organizer window will open automatically
@@ -69,20 +69,20 @@ Before using TestFlight, ensure you have:
      - What to test
      - Test notes
      - Sign-in information (if needed)
-   
 7. Fill in the test information:
+
    ```
    App Name: Daily Planner
    Build Version: 1.0
-   What to Test: 
+   What to Test:
    - Habit tracking and streaks
    - Todo management
    - Daily scoring system
    - Phone usage tracking
    - Notification reminders
    - Settings customization
-   
-   Notes: 
+
+   Notes:
    - Grant notification permissions when prompted
    - App uses Core Data for local storage
    - Requires iOS 16.0 or later
@@ -163,6 +163,7 @@ When you make changes:
 ## TestFlight Best Practices
 
 ### Build Number Strategy
+
 ```
 Version (Major.Minor.Patch)
 Build (increments)
@@ -175,6 +176,7 @@ Example:
 ```
 
 ### Release Notes Template
+
 ```
 Build 1.0.1 - Bug Fixes & Improvements
 
@@ -195,6 +197,7 @@ Testing Focus:
 ```
 
 ### Feedback Collection
+
 - Use TestFlight feedback feature
 - Create Google Form for detailed surveys
 - Request specific bug reports
@@ -207,12 +210,14 @@ Testing Focus:
 **Cause**: App uses restricted API or violates guideline
 
 **Fix**:
+
 - Review App Store Review Guidelines
 - Remove any private API usage
 - Check for missing privacy descriptions
 - Update Info.plist with required keys
 
 **Sample Info.plist for Daily Planner:**
+
 ```xml
 <key>NSCalendarsUsageDescription</key>
 <string>Daily Planner needs access to calendar for event scheduling</string>
@@ -233,6 +238,7 @@ Testing Focus:
 ### Issue: Testers Can't Install
 
 **Causes & Fixes**:
+
 1. iOS version too old → Update iOS on test device
 2. Device not added to account → Add in Identifiers & Profiles
 3. Provisioning profile expired → Renew in Xcode
@@ -241,6 +247,7 @@ Testing Focus:
 ### Issue: Crashes During Testing
 
 **Debugging**:
+
 1. Check TestFlight crash logs in App Store Connect
 2. Reproduce on Xcode with device
 3. Use Debug navigator to find crash location
@@ -249,6 +256,7 @@ Testing Focus:
 ### Issue: Memory/Performance Problems
 
 **Monitoring**:
+
 1. Xcode Organizer shows device metrics
 2. Check memory usage during habit loading
 3. Profile with Instruments if needed
@@ -289,9 +297,10 @@ When ready to publish:
 ## TestFlight for DailyPlanner Specific Tips
 
 ### Pre-Release Checklist
+
 ```
 □ All features working (habits, todos, scoring)
-□ Notifications scheduling correctly  
+□ Notifications scheduling correctly
 □ Dark mode rendering properly
 □ Data persists after app close
 □ No console errors or warnings
@@ -302,6 +311,7 @@ When ready to publish:
 ```
 
 ### Testing Scenarios
+
 1. **First Launch Experience**
    - Create first habit
    - Set notification reminder
@@ -329,6 +339,7 @@ When ready to publish:
 ## Summary
 
 TestFlight workflow for Daily Planner:
+
 ```
 1. Archive app in Xcode
 2. Validate and upload to App Store Connect

@@ -45,11 +45,13 @@
 ### 1. 🏆 Habit Tracking System
 
 #### Good & Bad Habits
+
 - **Good Habits**: Actions you want to do daily (exercise, meditation, reading)
 - **Bad Habits**: Actions you want to avoid or reduce (smoking, excessive scrolling)
 - Displayed in separate tabs for organization
 
 #### Data Tracked per Habit
+
 ```swift
 Habit {
   id: UUID                    // Unique identifier
@@ -72,6 +74,7 @@ Habit {
 ```
 
 #### Features
+
 - ✅ Mark habits complete with one tap
 - 🔥 Streak counter shows consecutive days
 - 🎯 Category filtering
@@ -82,6 +85,7 @@ Habit {
 ### 2. 👨‍👧‍👦 Child Habits (Multi-Level Tasks)
 
 **Use Case**: "Take Vitamins" habit at different times
+
 ```
 ├─ Take Vitamins (Parent)
 │  ├─ Vitamin D (8:00 AM)
@@ -90,6 +94,7 @@ Habit {
 ```
 
 **Implementation**:
+
 - Each child habit has own reminder time
 - Can complete child independently
 - Parent completion only if all children done (optional)
@@ -98,11 +103,13 @@ Habit {
 ### 3. ✅ Todo Management
 
 #### Todo Types
+
 - **One-Time Todos**: Complete once and remove
 - **Recurring Todos**: Auto-create next day after completion
 - **Categorized**: Work, Personal, Shopping, Health
 
 #### Todo Properties
+
 ```swift
 Todo {
   id: UUID
@@ -119,6 +126,7 @@ Todo {
 ```
 
 #### Filter Options
+
 - 📋 All todos
 - 📅 Today only
 - ⚡ High priority only
@@ -128,6 +136,7 @@ Todo {
 ### 4. 📊 Daily Scoring System
 
 #### Score Calculation Formula
+
 ```
 Total Score = Habit Score + Todo Score + Usage Score
 
@@ -147,6 +156,7 @@ Total: 0-100 points
 ```
 
 #### Performance Levels
+
 - 🌟 Excellent: 90-100 (Outstanding!)
 - 💪 Great: 75-89 (Keep it up!)
 - 👍 Good: 60-74 (On track!)
@@ -154,6 +164,7 @@ Total: 0-100 points
 - 🚀 Needs Work: 0-44 (Let's turn it around!)
 
 #### Motivation Messages
+
 - Dynamic messages based on current score
 - Encouragement at different levels
 - Tips for improvement
@@ -161,12 +172,14 @@ Total: 0-100 points
 ### 5. 📱 Phone Usage Tracking
 
 #### Manual Logging System
+
 - Apps: Name, minutes spent
 - Categories: Social Media, Games, Entertainment, Productivity, Other
 - Daily aggregation
 - Time-based insights
 
 #### Usage Features
+
 - 📊 Visual progress bar toward daily goal
 - 🎯 Daily 8-hour (480 min) default goal
 - 📉 Reduction score in daily assessment
@@ -174,6 +187,7 @@ Total: 0-100 points
 - 📈 Historical tracking and trends
 
 #### Recommendations Shown
+
 1. Set Screen Time Limits via iOS Settings
 2. Use App Timers
 3. Device-free hours
@@ -182,6 +196,7 @@ Total: 0-100 points
 ### 6. 🔔 Notifications & Reminders
 
 #### Types of Notifications
+
 ```
 1. Habit Reminders
    └─ Time: User-specified (e.g., 7:00 AM)
@@ -200,6 +215,7 @@ Total: 0-100 points
 ```
 
 #### Notification Features
+
 - 🔕 Enable/disable from Settings
 - ⏰ Custom notification times
 - 🔊 Sound and badge support
@@ -211,23 +227,27 @@ Total: 0-100 points
 #### Components
 
 **Daily Score Card**
+
 - Large circular progress indicator
 - Percentage score
 - Performance level badge
 - Motivation quote
 
 **Motivation Section**
+
 - Personalized message based on score
 - Encouragement and tips
 - Color-coded sentiment
 
 **Progress Statistics**
+
 - Habits completed (e.g., 3/5)
 - Todos completed (e.g., 8/10)
 - Phone usage (e.g., 120 minutes)
 - Each with icon and color
 
 **Daily Briefing**
+
 - 🌤️ Weather: Mock data (can integrate real API)
 - 📰 News: Customizable categories
 - 📝 Catch-up summary
@@ -235,12 +255,14 @@ Total: 0-100 points
 ### 8. 🎨 UI/UX Design
 
 #### Dark Mode Theme
+
 - Base background: Deep dark gray/black
 - Primary color: Blue gradient
 - Accent colors: Purple, green, orange
 - Text: White/gray hierarchy
 
 #### Design Elements
+
 - **Liquid Glass**: Semi-transparent cards with backdrop blur
 - **Gradient Accents**: Blue-to-purple gradients for CTAs
 - **Smooth Animations**: Transitions and state changes
@@ -248,6 +270,7 @@ Total: 0-100 points
 - **SF Symbols**: System icons throughout
 
 #### Views
+
 ```
 Tab Navigation
 ├─ Dashboard (home icon)
@@ -289,26 +312,31 @@ Tab Navigation
 #### Available Settings
 
 **Account**
+
 - Profile setup
 - User preferences
 
 **Notifications**
+
 - Enable/disable notifications
 - Custom briefing time
 - Notification schedule
 
 **Preferences**
+
 - News category selection
 - Display preferences
 - Language (ready for localization)
 - Reminder time slots
 
 **Data**
+
 - Backup data to cloud
 - Export data as CSV/JSON
 - Clear local data
 
 **About**
+
 - Version information
 - Privacy policy link
 - Terms of service link
@@ -318,6 +346,7 @@ Tab Navigation
 #### Integration Framework
 
 **Journal App Integration**
+
 ```swift
 journalHabit {
   externalAppLink: "com.apple.diary"
@@ -330,6 +359,7 @@ journalHabit {
 ```
 
 #### Possible Integrations
+
 - 📔 Journal app for journaling habit
 - 📱 Calendar for scheduling
 - 🏃 Health app for fitness tracking
@@ -339,6 +369,7 @@ journalHabit {
 ## Data Flow
 
 ### Creating a Habit
+
 ```
 User taps "+" in Habits tab
     ↓
@@ -358,6 +389,7 @@ UI refreshes, habit appears in list
 ```
 
 ### Completing a Habit
+
 ```
 User taps habit circle
     ↓
@@ -368,7 +400,7 @@ If not completed:
   - Increment streak
   - Update best streak if needed
   - Save to Core Data
-    
+
 If already completed:
   - Set isCompleted = false
   - Decrement streak
@@ -381,6 +413,7 @@ UI updates automatically via @Published
 ```
 
 ### Daily Score Calculation
+
 ```
 Every morning (or on app launch):
     ↓
@@ -402,6 +435,7 @@ DashboardViewModel displays in score card
 ### Published Properties
 
 **HabitViewModel**
+
 ```swift
 @Published var habits: [NSHabit]
 @Published var newHabitName: String
@@ -410,6 +444,7 @@ DashboardViewModel displays in score card
 ```
 
 **TodoViewModel**
+
 ```swift
 @Published var todos: [NSTodo]
 @Published var newTodoTitle: String
@@ -418,6 +453,7 @@ DashboardViewModel displays in score card
 ```
 
 **DashboardViewModel**
+
 ```swift
 @Published var dailyScore: Double
 @Published var todayHabitsCompleted: Int
@@ -429,6 +465,7 @@ DashboardViewModel displays in score card
 ## Core Data Schema
 
 ### Entities Relationships
+
 ```
 NSHabit
   ├─ hasMany: childHabits (Habit.parentHabit)
@@ -448,6 +485,7 @@ NSHealthEntry
 ```
 
 ### Fetch Requests Used
+
 1. All habits (excluding child habits)
 2. All todos sorted by due date
 3. Today's todos only
@@ -458,18 +496,21 @@ NSHealthEntry
 ## Performance Optimizations
 
 ### Memory Management
+
 - ✅ Use `@FetchRequest` for large lists
 - ✅ Lazy loading of list items
 - ✅ Release large collections after use
 - ✅ Clear unused Core Data objects
 
 ### Database Optimization
+
 - ✅ Indexed fetch requests
 - ✅ Predicate filtering (not in-memory)
 - ✅ Sorted descriptors in query
 - ✅ Batch operations for bulk saves
 
 ### UI Responsiveness
+
 - ✅ Background threads for CoreData operations
 - ✅ Debounce frequent updates
 - ✅ Use `.onChange()` sparingly
@@ -478,12 +519,14 @@ NSHealthEntry
 ## Security Considerations
 
 ### Data Protection
+
 - ✅ All data stored locally on device
 - ✅ No cloud storage by default
 - ✅ No user tracking
 - ✅ No external API calls (mock data)
 
 ### Privacy
+
 - ✅ No file system access required
 - ✅ No network permissions needed
 - ✅ No contact list access
@@ -492,6 +535,7 @@ NSHealthEntry
 ## Testing Scenarios
 
 ### Habit Testing
+
 ```
 Test 1: Create good habit
 - Create habit with name, category
@@ -512,6 +556,7 @@ Test 3: Child habits
 ```
 
 ### Todo Testing
+
 ```
 Test 1: Create recurring todo
 - Create with isRecurring = true
@@ -526,6 +571,7 @@ Test 2: Filter todos
 ```
 
 ### Score Testing
+
 ```
 Test 1: Score calculation
 - 3 habits created, 2 completed = 40 × (2/3) = 26.67
@@ -542,6 +588,7 @@ Test 2: Motivation message
 ## Potential Enhancements
 
 ### Phase 2
+
 - [ ] Real weather API (WeatherKit)
 - [ ] Real news API (NewsAPI)
 - [ ] Statistics/analytics page
@@ -550,6 +597,7 @@ Test 2: Motivation message
 - [ ] Achievement badges
 
 ### Phase 3
+
 - [ ] CloudKit sync
 - [ ] Multi-device support
 - [ ] iCloud backup/restore
@@ -558,6 +606,7 @@ Test 2: Motivation message
 - [ ] Siri shortcuts
 
 ### Phase 4
+
 - [ ] AI-powered insights
 - [ ] Machine learning for habit predictions
 - [ ] Social challenges

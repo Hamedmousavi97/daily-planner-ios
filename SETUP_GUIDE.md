@@ -4,9 +4,30 @@
 
 This is a complete iOS app for daily and weekly planning built with **SwiftUI** and **MVVM Architecture**. The app helps users track habits, manage todos, log phone usage, and improve productivity through daily scoring.
 
-## How to Create the Xcode Project
+## Quick Setup (GitHub Clone)
 
-Since you need to work with an Xcode project, follow these steps:
+### Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/Hamedmousavi97/daily-planner-ios.git
+cd daily-planner-ios
+```
+
+### Step 2: Open in Xcode
+
+1. Open Xcode
+2. File → Open → Select the `DailyPlanner.xcodeproj` file
+3. The project will open with all files and configurations ready
+
+### Step 3: Build and Run
+
+1. Select a simulator or device
+2. Press `Cmd + R` to build and run
+3. Grant notification permissions when prompted
+
+## Manual Setup (If Not Using GitHub)
+
+If you prefer to create the project manually, follow these steps:
 
 ### Step 1: Create Xcode Project
 
@@ -27,80 +48,31 @@ Since you need to work with an Xcode project, follow these steps:
 2. Name it: `DailyPlanner`
 3. Add the following entities with attributes:
 
-**NSHabit**
-- id: UUID
-- name: String
-- category: String
-- isGoodHabit: Boolean
-- createdDate: Date
-- currentStreak: Int32
-- bestStreak: Int32
-- timesCompleted: Int32
-- isCompleted: Boolean
-- completedDate: Date (optional)
-- reminderTime: Date (optional)
-- hasReminder: Boolean
-- externalAppLink: String (optional)
-- notes: String (optional)
-- Relationships: parentHabit (NSHabit), childHabits (NSHabit, to many)
-
-**NSTodo**
-- id: UUID
-- title: String
-- description: String (optional)
-- isCompleted: Boolean
-- createdDate: Date
-- dueDate: Date (optional)
-- isRecurring: Boolean
-- priority: String
-- category: String
-- completedDate: Date (optional)
-
-**NSDailyScore**
-- id: UUID
-- date: Date
-- totalScore: Double
-- habitsCompleted: Int32
-- habitsTotal: Int32
-- todosCompleted: Int32
-- todosTotal: Int32
-- appUsageReduction: Double
-- notes: String (optional)
-
-**NSAppUsageLog**
-- id: UUID
-- date: Date
-- totalMinutes: Int32
-- appName: String
-- category: String
-
-**NSHealthEntry**
-- id: UUID
-- date: Date
-- entryType: String
-- value: Double
-- notes: String (optional)
-
 ### Step 3: Copy All Swift Files
 
 Copy all the Swift files from the provided directory into your Xcode project:
 
 **App Files:**
+
 - DailyPlannerApp.swift
 
 **Models:**
+
 - Models/CoreDataModels.swift
 
 **Services:**
+
 - Services/CoreDataManager.swift
 - Services/NotificationService.swift
 
 **ViewModels:**
+
 - ViewModels/HabitViewModel.swift
 - ViewModels/TodoViewModel.swift
 - ViewModels/DashboardViewModel.swift
 
 **Views:**
+
 - Views/MainTabView.swift
 - Views/DashboardView.swift
 - Views/HabitsView.swift
@@ -129,6 +101,7 @@ Add the following keys to your Info.plist:
 ### Step 5: Enable Required Capabilities
 
 In Xcode:
+
 1. Select your **DailyPlanner** project in the left sidebar
 2. Select the **Targets** → **DailyPlanner**
 3. Go to the **Signing & Capabilities** tab
@@ -136,16 +109,19 @@ In Xcode:
 **Add these capabilities:**
 
 #### Push Notifications (REQUIRED)
+
 - Click **+ Capability** button (top left)
 - Search for **"Push Notifications"** or **"Remote Notifications"**
 - Click it to add
 - ✅ Make sure the checkbox is **enabled**
 
 **Note:** If you don't see "Push Notifications", try:
-- It might be labeled "Remote Notifications" 
+
+- It might be labeled "Remote Notifications"
 - Or check under "Background Modes" → enable "Remote notifications"
 
 #### Background Modes (Optional)
+
 - Click **+ Capability**
 - Search for **"Background Modes"**
 - A list of checkboxes will appear
@@ -154,11 +130,13 @@ In Xcode:
   - ✓ Remote notifications (enables push notifications to work in background)
 
 #### HealthKit (Optional)
+
 - Click **+ Capability**
 - Search for **"HealthKit"**
 - ✅ Enable the checkbox if you want health data integration
 
 **Summary:**
+
 - **Push Notifications**: Required ✅ (must enable)
 - **Background Modes**: Optional (enable for better notification handling)
 - **HealthKit**: Optional (only if using health tracking)
@@ -186,6 +164,7 @@ In Xcode:
 ### Using TestFlight
 
 1. Build & Archive:
+
    ```
    Product → Archive
    ```
@@ -230,13 +209,16 @@ In Xcode:
 ## Troubleshooting
 
 **Issue: Core Data migration errors**
+
 - Solution: Delete app from simulator and rebuild
 
 **Issue: Notifications not working**
+
 - Solution: Check Info.plist has NSCalendarsUsageDescription
 - Make sure you granted permission when prompted
 
 **Issue: Views not updating**
+
 - Solution: Ensure @ObservedObject and @StateObject are used correctly
 - Verify CoreData changes trigger `.onChange()` observers
 
@@ -253,6 +235,7 @@ In Xcode:
 ## Project Dependencies
 
 This project uses only Apple frameworks:
+
 - SwiftUI
 - Core Data
 - User Notifications

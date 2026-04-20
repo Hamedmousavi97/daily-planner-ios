@@ -2,6 +2,20 @@
 
 A comprehensive iOS app for daily and weekly planning that helps improve habits and manage daily tasks. Built with SwiftUI, MVVM architecture, and Core Data persistence.
 
+## 🚀 Quick Start
+
+### Clone & Run
+```bash
+git clone https://github.com/Hamedmousavi97/daily-planner-ios.git
+cd daily-planner-ios
+open DailyPlanner.xcodeproj
+```
+
+### Requirements
+- Xcode 15.0+
+- iOS 16.0+
+- Swift 5.0+
+
 ## Features
 
 ### 1. Habit Tracking
