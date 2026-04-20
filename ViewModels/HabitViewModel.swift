@@ -14,27 +14,10 @@ class HabitViewModel: NSObject, ObservableObject {
     
     private let dataManager = CoreDataManager.shared
     private let notificationService = NotificationService.shared
-    private var fetchedResultsController: NSFetchedResultsController<NSHabit>?
     
     override init() {
         super.init()
-        setupFetchedResultsController()
         fetchHabits()
-    }
-    
-    private func setupFetchedResultsController() {
-        let request = NSFetchRequest<NSHabit>(entityName: "NSHabit")
-        request.sortDescriptors = [NSSortDescriptor(keyPath: \NSHabit.name, ascending: true)]
-        request.predicate = NSPredicate(format: "parentHabit == nil")
-        
-        fetchedResultsController = NSFetchedResultsController(
-            fetchRequest: request,
-            managedObjectContext: dataManager.container.viewContext,
-            sectionNameKeyPath: "isGoodHabit",
-            cacheName: nil
-        )
-        
-        fetchedResultsController?.delegate = self
     }
     
     func fetchHabits() {
@@ -109,9 +92,3 @@ class HabitViewModel: NSObject, ObservableObject {
     }
 }
 
-// MARK: - NSFetchedResultsControllerDelegate
-extension HabitViewModel: NSFetchedResultsControllerDelegate {
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        fetchHabits()
-    }
-}

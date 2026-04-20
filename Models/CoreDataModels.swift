@@ -33,6 +33,10 @@ class NSTodo: NSManagedObject {
     @NSManaged var priority: String // "high", "medium", "low"
     @NSManaged var category: String
     @NSManaged var completedDate: Date?
+
+    var todoDescriptionText: String {
+        todoDescription ?? ""
+    }
 }
 
 // MARK: - Daily Score Model

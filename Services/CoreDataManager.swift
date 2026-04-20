@@ -16,7 +16,7 @@ class CoreDataManager: NSObject, ObservableObject {
                 fatalError("Core Data Error: \(error), \(error.userInfo)")
             }
         }
-        container.viewContext.automaticallyMergesChangesFromTheOther = true
+        container.viewContext.automaticallyMergesChangesFromParent = true
         super.init()
     }
     
@@ -131,11 +131,7 @@ class CoreDataManager: NSObject, ObservableObject {
             let newTodo = NSTodo(context: container.viewContext)
             newTodo.id = UUID()
             newTodo.title = todo.title
-            newTodo.description = todo.description
-            newTodo.priority = todo.priority
-            newTodo.category = todo.category
-            newTodo.isRecurring = true
-            newTodo.createdDate = Date()
+            newTodo.todoDescription = todo.todoDescription
             newTodo.isCompleted = false
             
             // Schedule for next day

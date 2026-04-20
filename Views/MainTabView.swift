@@ -15,8 +15,38 @@ struct MainTabView: View {
     }
     
     var body: some View {
-        ZStack {
-            // Background
+        TabView {
+            // Dashboard Tab
+            DashboardView(viewModel: dashboardViewModel)
+                .tabItem {
+                    Label("Dashboard", systemImage: "rectangle.grid.1x2.fill")
+                }
+            
+            // Habits Tab
+            HabitsView(viewModel: habitViewModel, notificationService: NotificationService.shared)
+                .tabItem {
+                    Label("Habits", systemImage: "checkmark.circle.fill")
+                }
+            
+            // Todos Tab
+            TodosView(viewModel: todoViewModel)
+                .tabItem {
+                    Label("Todos", systemImage: "list.bullet.clipboard.fill")
+                }
+            
+            // Phone Usage Tab
+            AppUsageView()
+                .tabItem {
+                    Label("Usage", systemImage: "iphone")
+                }
+            
+            // Settings Tab
+            SettingsView()
+                .tabItem {
+                    Label("Settings", systemImage: "gear")
+                }
+        }
+        .background(
             LinearGradient(
                 gradient: Gradient(colors: [
                     Color(red: 0.1, green: 0.1, blue: 0.12),
@@ -26,40 +56,8 @@ struct MainTabView: View {
                 endPoint: .bottomTrailing
             )
             .ignoresSafeArea()
-            
-            TabView {
-                // Dashboard Tab
-                DashboardView(viewModel: dashboardViewModel)
-                    .tabItem {
-                        Label("Dashboard", systemImage: "rectangle.grid.1x2.fill")
-                    }
-                
-                // Habits Tab
-                HabitsView(viewModel: habitViewModel, notificationService: NotificationService.shared)
-                    .tabItem {
-                        Label("Habits", systemImage: "checkmark.circle.fill")
-                    }
-                
-                // Todos Tab
-                TodosView(viewModel: todoViewModel)
-                    .tabItem {
-                        Label("Todos", systemImage: "list.bullet.clipboard.fill")
-                    }
-                
-                // Phone Usage Tab
-                AppUsageView()
-                    .tabItem {
-                        Label("Usage", systemImage: "iphone")
-                    }
-                
-                // Settings Tab
-                SettingsView()
-                    .tabItem {
-                        Label("Settings", systemImage: "gear")
-                    }
-            }
-            .preferredColorScheme(.dark)
-        }
+        )
+        .preferredColorScheme(.dark)
     }
 }
 
